@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		
 		<!-- Custom CSS files -->
+		<link rel="stylesheet" href="css/default.css">
 		
 		<!-- Get the latest jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -15,20 +16,20 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<!-- Custom JS files -->
 		<script src="js/app.js"></script>
-		<script src="js/additionProblem.js"></script>
-		<script src="js/subtractionProblem.js"></script>
+		<script src="js/lib/devAssist.js"
+		<script src="js/modules/additionProblem.js"></script>
+		<script src="js/modules/subtractionProblem.js"></script>
 	</head>
 	<body onload="initializeApp()">
-		<div class="container text-center">
-			<br><br>
-			
-			<h1 id='problemType'></h1>
-
+		<div id="appView" class="container text-center">
+			<div class="title">
+				<h1 id='problemType'></h1>
+			</div>
 			<br><br>
 			
 			<div class="problem">
 				<!-- Problem area -->
-				<span id="num1">x</span> <span id="operator">+</span> <span id="num2">y</span>
+				<span id="num1">x</span> <span id="operator"></span> <span id="num2">y</span>
 			</div>
 			
 			<br>
@@ -43,7 +44,7 @@
 			<br>
 			
 			<div>
-				<input type="button" value="New Problem" onclick="newAdditionProblem()">
+				<input type="button" id="generateButton" value="New Problem" onclick="newAdditionProblem()">
 			</div>
 		</div>
 	</body>

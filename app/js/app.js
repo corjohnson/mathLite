@@ -8,6 +8,7 @@
 var problemTypeTitle = "#problemType";
 var operator = "#operator";
 var submitButton = "#submitButton";
+var newProblemButton = "#generateButton";
 
 var tryAgainMessages = ["Try again!", "Oops, that's incorrect!", "Keep trying!"];
 

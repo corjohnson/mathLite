@@ -1,0 +1,28 @@
+/* Colors
+ * D68189 - Dark pink
+ * E94E77 - Pink
+ * C6A49A - Brown
+ * C6E5D9 - Teal
+ * F4EAD5 - Beige
+ */
+
+body {
+	background-color: #F4EAD5;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.container {
+	width: 90%;
+	height: 85%;
+		
+	padding-top: 100px;
+	padding-bottom: 100px;
+	border: 10px solid #D68189;
+}
+
+
+#appView {
+	background-color: #F4EAD5;
+}
+
