@@ -6,6 +6,8 @@
  */
 //Get fields
 var problemTypeTitle = "#problemType";
+var operator = "#operator";
+var submitButton = "#submitButton";
 
 var tryAgainMessages = ["Try again!", "Oops, that's incorrect!", "Keep trying!"];
 
@@ -14,7 +16,7 @@ function initializeApp(){
 	console.log("Initializing the app...");
 	
 	//Initialize the default (addition)
-	setUpAddition();
-	
+	//setUpAddition();
+	setUpSubtraction();
 	console.log("Addition set up complete!");
 }
