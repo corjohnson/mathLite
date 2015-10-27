@@ -41,6 +41,6 @@ function newSubtractionProblem(){
 	$(operator).text("-");
 
 	//Empty the answer and correct fields
-	$("#answer").val("");
-	$("#correctness").text("");
+	clearTextEntry(answer);
+	clearTextDisplay(correctIndicator);
 }
