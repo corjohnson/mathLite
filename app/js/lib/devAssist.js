@@ -13,3 +13,13 @@ function clearTextEntry(selector){
 function clearTextDisplay(selector){
 	$(selector).text("");
 }
+
+/* tryAgainMessage
+ * This function will take a jQuery id or class selector and
+ * set the text to one of the try again messages.
+ */
+function tryAgainMessage(selector){
+	var messages = ["Try again!", "Oops, that's incorrect!", "Keep trying!"];
+	
+	$(selector).text(messages[Math.floor(Math.random() * messages.length)]);
+}

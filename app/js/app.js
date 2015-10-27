@@ -19,7 +19,7 @@ function initializeApp(){
 	console.log("Initializing the app...");
 	
 	//Initialize the default (addition)
-	//setUpAddition();
-	setUpSubtraction();
+	setUpAddition();
+	//setUpSubtraction();
 	console.log("Addition set up complete!");
 }
