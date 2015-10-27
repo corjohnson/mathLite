@@ -9,6 +9,12 @@ function setUpAddition(){
 	//Call the newAdditionProblem function
 	newAdditionProblem();
 	
+	//Change the submitButton onclick to test addition
+	$(submitButton).attr("onclick", "testAddition()");
+	
+	//Change the problem generator button to newAdditionProblem
+	$(newProblemButton).attr("onclick", "newAdditionProblem()");
+	
 	//Send init complete message
 	console.log("Addition module initialization complete");
 }
@@ -33,7 +39,9 @@ function newAdditionProblem(){
 	$("#num1").text(Math.floor(Math.random() * 100));
 	$("#num2").text(Math.floor(Math.random() * 100));
 
+	$(operator).text("+");
+
 	//Empty the answer and correct fields
-	$("#answer").val("");
-	$("#correctness").text("");
+	clearTextEntry(answer);
+	clearTextDisplay(correctIndicator);
 }

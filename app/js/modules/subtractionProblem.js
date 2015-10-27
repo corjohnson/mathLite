@@ -12,12 +12,14 @@ function setUpSubtraction(){
 	//Change the submitButton onclick to test subtraction
 	$(submitButton).attr("onclick", "testSubtraction()");
 	
+	//Change the problem generator button to newSubtraction
+	$(newProblemButton).attr("onclick", "newSubtractionProblem()");
+	
 	//Send init complete message
 	console.log("Subtraction module initialization complete");
 }
 
 function testSubtraction(){
-	
 	//Get the values from the number fields and answer field
 	var x = $("#num1").text();
 	var y = $("#num2").text();
@@ -39,6 +41,6 @@ function newSubtractionProblem(){
 	$(operator).text("-");
 
 	//Empty the answer and correct fields
-	$("#answer").val("");
-	$("#correctness").text("");
+	clearTextEntry(answer);
+	clearTextDisplay(correctIndicator);
 }
