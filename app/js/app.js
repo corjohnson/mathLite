@@ -12,14 +12,41 @@ var newProblemButton = "#generateButton";
 var answer = "#answer";
 var correctIndicator = "#correctness";
 
-var tryAgainMessages = ["Try again!", "Oops, that's incorrect!", "Keep trying!"];
-
 //Create the default content of the page
 function initializeApp(){
 	console.log("Initializing the app...");
 	
-	//Initialize the default (addition)
+	//Show module selection page
+	displayHome();
+	
+	//Initialize secondary scripts (ie submitHandles)
+	
+	console.log("Initial set up complete!");
+}
+
+//Display our app view
+function displayApp(){
+	//Hide the module selection
+	$("#homeView").hide();
+	
+	//Show the app view
+	$("#appView").show();
+	
+	//Set up the app with the modules selected from the home
+	//Default set up addition for now
 	setUpAddition();
-	//setUpSubtraction();
-	console.log("Addition set up complete!");
+}
+
+//Display the home view
+function displayHome(){
+	//Hide the app view
+	$("#appView").hide();
+	
+	//Show the module selection
+	$("#homeView").show();
+}
+
+//In this function we are going to pull the selected modules of users
+function getModuleSelections(){
+	
 }

@@ -21,31 +21,56 @@
 		<script src="js/modules/subtractionProblem.js"></script>
 	</head>
 	<body onload="initializeApp()">
-		<div id="appView" class="container text-center">
-			<div class="title">
-				<h1 id='problemType'></h1>
-			</div>
-			<br><br>
+		<div id='appView'>
+			<input type="button" value="<-- Back To Home" onclick="displayHome()">
 			
-			<div class="problem">
-				<!-- Problem area -->
-				<span id="num1">x</span> <span id="operator"></span> <span id="num2">y</span>
-			</div>
-			
-			<br>
-			
-			<input type="text" id="answer">
-
-			<input type="button" id="submitButton" value="Submit" onclick="testAddition()">
-			<br>
-
-			<h2 id="correctness"></h2>
-			
-			<br>
-			
-			<div>
-				<input type="button" id="generateButton" value="New Problem" onclick="newAdditionProblem()">
+			<div class='container text-center'>
+				<div class='title'>
+					<h1 id='problemType'></h1>
+				</div>
+				<br><br>
+				
+				<div class='problem'>
+					<!-- Problem area -->
+					<span id='num1'>x</span> <span id='operator'></span> <span id='num2'>y</span>
+				</div>
+				<br>
+				
+				<input type='text' id='answer'>
+				<br>
+				
+				<input type='button' id='submitButton' value='Submit' onclick='testAddition()'>
+				<br>
+	
+				<h2 id='correctness'></h2>
+				<br>
+				
+				<div>
+					<input type='button' id='generateButton' value='New Problem' onclick='newAdditionProblem()'>
+				</div>
 			</div>
 		</div>
+		
+		<div id="homeView">
+			<div class='title text-center'>
+				<h1>Welcome to Math Light!</h1>
+				<br>
+				<p>Please select the modules you wish to use below!</p>
+				
+				<input type="checkbox" value="addition">Addition
+				<br>
+				<input type="checkbox" value="subtraction">Subtraction
+				<br>
+				<input type="button" id="launchApp" value="Launch App" onclick="displayApp()">
+			</div>
+		</div>
+		
+		<script>
+			$(answer).keyup(function(e) {
+				if(e.which == 13){
+					$(submitButton).trigger("click");
+				}
+			});
+		</script>
 	</body>
 </html>
