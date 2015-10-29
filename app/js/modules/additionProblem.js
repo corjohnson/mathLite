@@ -30,7 +30,7 @@ function testAddition(){
 		$("#correctness").text("Correct!");
 	}
 	else {
-		$("#correctness").text(tryAgainMessages[Math.floor(Math.random() * 3)]);
+		tryAgainMessage("#correctness");
 	}
 }
 
