@@ -36,16 +36,15 @@
 				</div>
 				<br>
 				
-				<input type='text' id='answer'>
-				<br>
-				
-				<input type='button' id='submitButton' value='Submit' onclick='testAddition()'>
-				<br>
+				<input type='text' id='answer' onkeyup="enterButtonHandle(event)">
+				<br><br>
 	
 				<h2 id='correctness'></h2>
 				<br>
 				
 				<div>
+					<button id='submitButton' onclick='testAddition()'>Submit</button>
+					<br>
 					<input type='button' id='generateButton' value='New Problem' onclick='newAdditionProblem()'>
 				</div>
 			</div>
@@ -64,13 +63,5 @@
 				<input type="button" id="launchApp" value="Launch App" onclick="displayApp()">
 			</div>
 		</div>
-		
-		<script>
-			$(answer).keyup(function(e) {
-				if(e.which == 13){
-					$(submitButton).trigger("click");
-				}
-			});
-		</script>
 	</body>
 </html>

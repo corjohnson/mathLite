@@ -4,7 +4,7 @@ function setUpSubtraction(){
 	console.log("Initializing the subtraction module");
 	
 	//Change the title to the proper text
-	$(problemTypeTitle).text("Subtraction");
+	setText(problemTypeTitle, "Subtraction");
 	
 	//Call the newSubtractionProblem function
 	newSubtractionProblem();
@@ -27,20 +27,21 @@ function testSubtraction(){
 
 	//Test subtraction
 	if((parseInt(x) - parseInt(y)) == parseInt(answer)){
-		$("#correctness").text("Correct!");
+		setText(correctIndicator, "Correct!");
 	}
 	else {
-		tryAgainMessage("#correctness");
+		tryAgainMessage(correctIndicator);
 	}
 }
 
 function newSubtractionProblem(){
 	//Random number between 0 and 100 for both x and y
-	$("#num1").text(Math.floor(Math.random() * 100));
-	$("#num2").text(Math.floor(Math.random() * 100));
-	$(operator).text("-");
+	setText("#num1", Math.floor(Math.random() * 100));
+	setText("#num2", Math.floor(Math.random() * 100));
+	
+	setText(operator, "-");
 
 	//Empty the answer and correct fields
 	clearTextEntry(answer);
-	clearTextDisplay(correctIndicator);
+	setText(correctIndicator, "");
 }
