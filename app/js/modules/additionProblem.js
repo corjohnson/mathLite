@@ -14,13 +14,11 @@ function setUpAddition(){
 }
 
 function testAddition(){
-	//Get the values from the number fields and answer field
-	var x = $("#num1").text();
-	var y = $("#num2").text();
-	var answer = $("#answer").val();
+	//Get user's answer
+	var answer = $(userAnswer).val();
 
 	//Test addition
-	if((parseInt(x) + parseInt(y)) == parseInt(answer)){
+	if(parseInt(answer) == problemAnswer){
 		//Mark that the user was correct
 		setText(correctIndicator, "Correct!");
 		
@@ -35,8 +33,15 @@ function testAddition(){
 
 function newAdditionProblem(){
 	//Random number between 0 and 100 for both x and y
-	setText("#num1", Math.floor(Math.random() * 100));
-	setText("#num2", Math.floor(Math.random() * 100));
+	var x = Math.floor(Math.random() * 100);
+	var y = Math.floor(Math.random() * 100);
+	
+	//Store the answer in a global variable
+	problemAnswer = x + y;
+	
+	//Fill out text fields in the problem
+	setText("#num1", x);
+	setText("#num2", y);
 	
 	setText(operator, "+");
 
