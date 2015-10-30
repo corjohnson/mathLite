@@ -6,12 +6,13 @@ function clearTextEntry(selector){
 	$(selector).val("");
 }
 
-/* clearTextDisplay
- * This function takes in a jQuery id or class selector for an 
- * element with the attribute "text" and empties it
+/* setText
+ * This function takes two parameters, the jQuery identifier and
+ * a string to set as the text. This function is compatible with 
+ * elements that support the text attribute
  */
-function clearTextDisplay(selector){
-	$(selector).text("");
+function setText(selector, text){
+	$(selector).text(text);
 }
 
 /* tryAgainMessage
@@ -27,14 +28,18 @@ function tryAgainMessage(selector){
 /* enterButtonHandle
  * When the user hits the enter button it should submit their answer to the problem.
  * Since I'm not using a form to submit the answers, I need to make a jquery handler.
- * 
- * Doesn't work. I think it's the load order, so either I need to add it after the page loads
- * or I can try to call it from the submit button itself? I'm gonna need to think on this one
  */
-$(answer).keyup(function(e) {
-	alert("Hello world");
-	if(e.which == 13){
-		alert("Enter was pressed");
-		//$(submitButton).trigger("click");
+function enterButtonHandle(eventKey){
+	//Test the input against the enter keycode
+	if(eventKey.which == 13){
+		$(submitButton).trigger("click");
 	}
-});
+}
+
+/* setButtonAction
+ * This function changes the onclick of a button. It requires a jQuery selector and 
+ * a javascript function that will be called by the button.
+ */
+function setButtonAction(selector, functionCall){
+	$(selector).attr("onclick", functionCall);
+}

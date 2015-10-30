@@ -4,16 +4,10 @@ function setUpSubtraction(){
 	console.log("Initializing the subtraction module");
 	
 	//Change the title to the proper text
-	$(problemTypeTitle).text("Subtraction");
+	setText(problemTypeTitle, "Subtraction");
 	
 	//Call the newSubtractionProblem function
 	newSubtractionProblem();
-	
-	//Change the submitButton onclick to test subtraction
-	$(submitButton).attr("onclick", "testSubtraction()");
-	
-	//Change the problem generator button to newSubtraction
-	$(newProblemButton).attr("onclick", "newSubtractionProblem()");
 	
 	//Send init complete message
 	console.log("Subtraction module initialization complete");
@@ -27,20 +21,30 @@ function testSubtraction(){
 
 	//Test subtraction
 	if((parseInt(x) - parseInt(y)) == parseInt(answer)){
-		$("#correctness").text("Correct!");
+		//Mark that the user is correct
+		setText(correctIndicator, "Correct!");
+		
+		//Change the submit button to the generate problem button
+		setText(submitButton, "New Problem");
+		setButtonAction(submitButton, "newAdditionProblem()");
 	}
 	else {
-		tryAgainMessage("#correctness");
+		tryAgainMessage(correctIndicator);
 	}
 }
 
 function newSubtractionProblem(){
 	//Random number between 0 and 100 for both x and y
-	$("#num1").text(Math.floor(Math.random() * 100));
-	$("#num2").text(Math.floor(Math.random() * 100));
-	$(operator).text("-");
+	setText("#num1", Math.floor(Math.random() * 100));
+	setText("#num2", Math.floor(Math.random() * 100));
+	
+	setText(operator, "-");
 
 	//Empty the answer and correct fields
 	clearTextEntry(answer);
-	clearTextDisplay(correctIndicator);
+	setText(correctIndicator, "");
+	
+	//Set the submit button back to say submit
+	setText(submitButton, "Submit");
+	setButtonAction(submitButton, "testAddition()");
 }
