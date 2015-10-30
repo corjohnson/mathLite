@@ -9,12 +9,6 @@ function setUpSubtraction(){
 	//Call the newSubtractionProblem function
 	newSubtractionProblem();
 	
-	//Change the submitButton onclick to test subtraction
-	$(submitButton).attr("onclick", "testSubtraction()");
-	
-	//Change the problem generator button to newSubtraction
-	$(newProblemButton).attr("onclick", "newSubtractionProblem()");
-	
 	//Send init complete message
 	console.log("Subtraction module initialization complete");
 }
@@ -27,7 +21,12 @@ function testSubtraction(){
 
 	//Test subtraction
 	if((parseInt(x) - parseInt(y)) == parseInt(answer)){
+		//Mark that the user is correct
 		setText(correctIndicator, "Correct!");
+		
+		//Change the submit button to the generate problem button
+		setText(submitButton, "New Problem");
+		setButtonAction(submitButton, "newAdditionProblem()");
 	}
 	else {
 		tryAgainMessage(correctIndicator);
@@ -44,4 +43,8 @@ function newSubtractionProblem(){
 	//Empty the answer and correct fields
 	clearTextEntry(answer);
 	setText(correctIndicator, "");
+	
+	//Set the submit button back to say submit
+	setText(submitButton, "Submit");
+	setButtonAction(submitButton, "testAddition()");
 }

@@ -35,3 +35,11 @@ function enterButtonHandle(eventKey){
 		$(submitButton).trigger("click");
 	}
 }
+
+/* setButtonAction
+ * This function changes the onclick of a button. It requires a jQuery selector and 
+ * a javascript function that will be called by the button.
+ */
+function setButtonAction(selector, functionCall){
+	$(selector).attr("onclick", functionCall);
+}

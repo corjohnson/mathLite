@@ -9,12 +9,6 @@ function setUpAddition(){
 	//Call the newAdditionProblem function
 	newAdditionProblem();
 	
-	//Change the submitButton onclick to test addition
-	$(submitButton).attr("onclick", "testAddition()");
-
-	//Change the problem generator button to newAdditionProblem
-	$(newProblemButton).attr("onclick", "newAdditionProblem()");
-	
 	//Send init complete message
 	console.log("Addition module initialization complete");
 }
@@ -27,7 +21,12 @@ function testAddition(){
 
 	//Test addition
 	if((parseInt(x) + parseInt(y)) == parseInt(answer)){
+		//Mark that the user was correct
 		setText(correctIndicator, "Correct!");
+		
+		//Change the submit button to the generate problem button
+		setText(submitButton, "New Problem");
+		setButtonAction(submitButton, "newAdditionProblem()");
 	}
 	else {
 		tryAgainMessage(correctIndicator);
@@ -44,4 +43,8 @@ function newAdditionProblem(){
 	//Empty the answer and correct fields
 	clearTextEntry(answer);
 	setText(correctIndicator, "");
+	
+	//Set the submit button back to say submit
+	setText(submitButton, "Submit");
+	setButtonAction(submitButton, "testAddition()");
 }
