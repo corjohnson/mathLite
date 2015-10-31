@@ -22,7 +22,7 @@ function setText(selector, text){
 function tryAgainMessage(selector){
 	var messages = ["Try again!", "Oops, that's incorrect!", "Keep trying!"];
 	
-	$(selector).text(messages[Math.floor(Math.random() * messages.length)]);
+	setText(selector, messages[Math.floor(Math.random() * messages.length)]);
 }
 
 /* enterButtonHandle
