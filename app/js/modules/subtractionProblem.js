@@ -40,8 +40,8 @@ function newSubtractionProblem(){
 	problemAnswer = x - y;
 	
 	//Fill out the text fields
-	setText("#num1", Math.floor(Math.random() * 100));
-	setText("#num2", Math.floor(Math.random() * 100));
+	setText("#num1", x);
+	setText("#num2", y);
 	
 	setText(operator, "-");
 
