@@ -9,12 +9,15 @@ var problemTypeTitle = "#problemType";
 var operator = "#operator";
 var submitButton = "#submitButton";
 var newProblemButton = "#generateButton";
-var answer = "#answer";
+var userAnswer = "#answer";
 var correctIndicator = "#correctness";
 
 //View fields
 var homeView = "#homeView";
 var appView = "#appView";
+
+//Global Variables
+var problemAnswer;
 
 //Create the default content of the page
 function initializeApp(){
