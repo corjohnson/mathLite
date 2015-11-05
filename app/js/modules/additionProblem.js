@@ -1,19 +1,16 @@
-//Set up the addition module
-function setUpAddition(){
-	//Send init message
-	//console.log("Initializing the addition module");
+var AdditionModule = function () {
 	
+};
+
+AdditionModule.setUp = function () {
 	//Change the title to the proper text
 	setText(problemTypeTitle, "Addition");
 	
 	//Call the newAdditionProblem function
-	newAdditionProblem();
-	
-	//Send init complete message
-	//console.log("Addition module initialization complete");
-}
+	AdditionModule.newProblem();
+};
 
-function testAddition(){
+AdditionModule.test = function () {
 	//Get user's answer
 	var answer = $(userAnswer).val();
 
@@ -29,9 +26,9 @@ function testAddition(){
 	else {
 		tryAgainMessage(correctIndicator);
 	}
-}
+};
 
-function newAdditionProblem(){
+AdditionModule.newProblem = function () {
 	//Random number between 0 and 100 for both x and y
 	var x = Math.floor(Math.random() * 100);
 	var y = Math.floor(Math.random() * 100);
@@ -51,5 +48,5 @@ function newAdditionProblem(){
 	
 	//Set the submit button back to say submit
 	setText(submitButton, "Submit");
-	setButtonAction(submitButton, "testAddition()");
-}
+	setButtonAction(submitButton, "AdditionModule.test()");
+};

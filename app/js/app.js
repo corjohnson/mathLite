@@ -43,9 +43,10 @@ function displayApp(){
 	
 	//Set up the app with the modules selected from the home
 	//Default set up addition for now
-	getModuleSelections();
+	//getModuleSelections();
+	//generateProblem();
 	
-	generateProblem();
+	SubtractionModule.setUp();
 }
 
 //Display the home view
@@ -73,13 +74,13 @@ function generateProblem(){
 	
 	switch(selection){
 		case "Addition":
-			setUpAddition();
+			AdditionModule.setUp();
 			break;
 		case "Subtraction":
-			setUpSubtraction();
+			SubtractionModule.setUp();
 			break;
 		default:
-			setUpAddition();
+			AdditionModule.setUp();
 			break;
 	}
 }
