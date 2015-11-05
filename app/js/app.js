@@ -19,6 +19,9 @@ var appView = "#appView";
 //Global Variables
 var problemAnswer;
 
+//Internal Variables
+var modules = [];
+
 //Create the default content of the page
 function initializeApp(){
 	console.log("Initializing the app...");
@@ -40,7 +43,9 @@ function displayApp(){
 	
 	//Set up the app with the modules selected from the home
 	//Default set up addition for now
-	setUpAddition();
+	getModuleSelections();
+	
+	generateProblem();
 }
 
 //Display the home view
@@ -54,5 +59,27 @@ function displayHome(){
 
 //In this function we are going to pull the selected modules of users
 function getModuleSelections(){
+	if($("#addCheck").is(":checked")){
+		modules.push("Addition");
+	}
 	
+	if($("#subCheck").is(":checked")){
+		modules.push("Subtraction");
+	}
+}
+
+function generateProblem(){
+	var selection = modules[Math.floor(Math.random() * modules.length)];
+	
+	switch(selection){
+		case "Addition":
+			setUpAddition();
+			break;
+		case "Subtraction":
+			setUpSubtraction();
+			break;
+		default:
+			setUpAddition();
+			break;
+	}
 }

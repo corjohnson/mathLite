@@ -1,7 +1,7 @@
 //Set up the addition module
 function setUpAddition(){
 	//Send init message
-	console.log("Initializing the addition module");
+	//console.log("Initializing the addition module");
 	
 	//Change the title to the proper text
 	setText(problemTypeTitle, "Addition");
@@ -10,7 +10,7 @@ function setUpAddition(){
 	newAdditionProblem();
 	
 	//Send init complete message
-	console.log("Addition module initialization complete");
+	//console.log("Addition module initialization complete");
 }
 
 function testAddition(){
@@ -24,7 +24,7 @@ function testAddition(){
 		
 		//Change the submit button to the generate problem button
 		setText(submitButton, "New Problem");
-		setButtonAction(submitButton, "newAdditionProblem()");
+		setButtonAction(submitButton, "generateProblem()");
 	}
 	else {
 		tryAgainMessage(correctIndicator);

@@ -1,7 +1,7 @@
 //Set up the subtraction module
 function setUpSubtraction(){
 	//Send init message
-	console.log("Initializing the subtraction module");
+	//console.log("Initializing the subtraction module");
 	
 	//Change the title to the proper text
 	setText(problemTypeTitle, "Subtraction");
@@ -10,7 +10,7 @@ function setUpSubtraction(){
 	newSubtractionProblem();
 	
 	//Send init complete message
-	console.log("Subtraction module initialization complete");
+	//console.log("Subtraction module initialization complete");
 }
 
 function testSubtraction(){
@@ -24,7 +24,7 @@ function testSubtraction(){
 		
 		//Change the submit button to the generate problem button
 		setText(submitButton, "New Problem");
-		setButtonAction(submitButton, "newAdditionProblem()");
+		setButtonAction(submitButton, "generateProblem()");
 	}
 	else {
 		tryAgainMessage(correctIndicator);
