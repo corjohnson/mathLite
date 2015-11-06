@@ -57,7 +57,7 @@ function displayHome(){
 //In this function we are going to pull the selected modules of users
 function activateModule(moduleType, button){
 	if(modules.indexOf(moduleType) > -1){
-		modules.pop(modules.indexOf(moduleType));
+		modules.splice(modules.indexOf(moduleType), 1);
 		$(button).removeClass("selected");
 	}
 	else{

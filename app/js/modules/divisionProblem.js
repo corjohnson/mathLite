@@ -30,8 +30,8 @@ DivisionModule.test = function () {
 
 DivisionModule.newProblem = function () {
 	//Random number between 0 and 100 for both x and y
-	var x = Math.floor(Math.random() * 12);
-	var y = Math.floor(Math.random() * 12 + 1); //never 0
+	var x = Math.floor(Math.random() * 20);
+	var y = Math.floor(Math.random() * 20 + 1); //never 0
 	
 	//Store the answer in a global variable rounded to 1 decimal place
 	problemAnswer = Math.round10(x / y, -1);
