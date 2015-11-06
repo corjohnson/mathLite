@@ -19,6 +19,8 @@
 		<script src="js/lib/devAssist.js"></script>
 		<script src="js/modules/additionProblem.js"></script>
 		<script src="js/modules/subtractionProblem.js"></script>
+		<script src="js/modules/multiplicationProblem.js"></script>
+		<script src="js/modules/divisionProblem.js"></script>
 	</head>
 	<body onload="initializeApp()">
 		<div id='appView'>
@@ -41,7 +43,7 @@
 				<br><br>
 	
 				<div>
-					<button id='submitButton' onclick='testAddition()'>Submit</button>
+					<button id='submitButton' onclick=''>Submit</button>
 					<br>
 				</div>
 				<br>
@@ -57,8 +59,12 @@
 				<p>Please select what you want to study:</p>
 				
 				<table>
-					<input id="addCheck" type="checkbox" value="addition"> Addition
-					<input id="subCheck"  type="checkbox" value="subtraction"> Subtraction
+					<tr>
+						<input id="addi" type="button" onclick="activateModule('Addition', '#addi')" value="  +  ">&nbsp;
+						<input id="subt" type="button" onclick="activateModule('Subtraction', '#subt')" value="  -  ">&nbsp;
+						<input id="mult" type="button" onclick="activateModule('Multiplication', '#mult')" value="  *  ">&nbsp;
+						<input id="divi" type="button" onclick="activateModule('Division', '#divi')" value="  /  ">
+					</tr>
 				</table>
 				
 				<br><br>

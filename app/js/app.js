@@ -42,8 +42,6 @@ function displayApp(){
 	$(appView).show();
 	
 	//Set up the app with the modules selected from the home
-	//Default set up addition for now
-	getModuleSelections();
 	generateProblem();
 }
 
@@ -57,13 +55,14 @@ function displayHome(){
 }
 
 //In this function we are going to pull the selected modules of users
-function getModuleSelections(){
-	if($("#addCheck").is(":checked")){
-		modules.push("Addition");
+function activateModule(moduleType, button){
+	if(modules.indexOf(moduleType) > -1){
+		modules.pop(modules.indexOf(moduleType));
+		$(button).removeClass("selected");
 	}
-	
-	if($("#subCheck").is(":checked")){
-		modules.push("Subtraction");
+	else{
+		modules.push(moduleType);
+		$(button).addClass("selected");
 	}
 }
 
@@ -76,6 +75,12 @@ function generateProblem(){
 			break;
 		case "Subtraction":
 			SubtractionModule.setUp();
+			break;
+		case "Multiplication":
+			MultiplicationModule.setUp();
+			break;
+		case "Division":
+			DivisionModule.setUp();
 			break;
 		default:
 			AdditionModule.setUp();

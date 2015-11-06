@@ -35,7 +35,11 @@ hr {
 	width: 60%;
 }
 
-input[type="checkbox"] {
-	width: 15px;
-	height: 15px;
+.selected {
+	background: #F9F7F8;
+	color: #2E3331;
+}
+
+#addi, #subt, #mult, #divi {
+	font-size: 2em;
 }
