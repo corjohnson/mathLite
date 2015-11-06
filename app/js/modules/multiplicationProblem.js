@@ -1,16 +1,16 @@
-var AdditionModule = function () {
+var MultiplicationModule = function () {
 	
 };
 
-AdditionModule.setUp = function () {
+MultiplicationModule.setUp = function () {
 	//Change the title to the proper text
-	setText(problemTypeTitle, "Addition");
+	setText(problemTypeTitle, "Multiplication");
 	
 	//Call the newAdditionProblem function
-	AdditionModule.newProblem();
+	MultiplicationModule.newProblem();
 };
 
-AdditionModule.test = function () {
+MultiplicationModule.test = function () {
 	//Get user's answer
 	var answer = $(userAnswer).val();
 
@@ -28,19 +28,19 @@ AdditionModule.test = function () {
 	}
 };
 
-AdditionModule.newProblem = function () {
+MultiplicationModule.newProblem = function () {
 	//Random number between 0 and 100 for both x and y
-	var x = Math.floor(Math.random() * 100);
-	var y = Math.floor(Math.random() * 100);
+	var x = Math.floor(Math.random() * 20);
+	var y = Math.floor(Math.random() * 20);
 	
 	//Store the answer in a global variable
-	problemAnswer = x + y;
+	problemAnswer = x * y;
 	
 	//Fill out text fields in the problem
 	setText("#num1", x);
 	setText("#num2", y);
 	
-	setText(operator, "+");
+	setText(operator, "*");
 
 	//Empty the answer and correct fields
 	clearTextEntry(answer);
@@ -48,5 +48,5 @@ AdditionModule.newProblem = function () {
 	
 	//Set the submit button back to say submit
 	setText(submitButton, "Submit");
-	setButtonAction(submitButton, "AdditionModule.test()");
+	setButtonAction(submitButton, "MultiplicationModule.test()");
 };
