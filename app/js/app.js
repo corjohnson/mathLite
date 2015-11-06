@@ -43,10 +43,8 @@ function displayApp(){
 	
 	//Set up the app with the modules selected from the home
 	//Default set up addition for now
-	//getModuleSelections();
-	//generateProblem();
-	
-	SubtractionModule.setUp();
+	getModuleSelections();
+	generateProblem();
 }
 
 //Display the home view

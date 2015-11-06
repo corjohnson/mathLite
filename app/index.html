@@ -22,13 +22,14 @@
 	</head>
 	<body onload="initializeApp()">
 		<div id='appView'>
-			<input type="button" value="<-- Back To Home" onclick="displayHome()">
+			<input type="button" value="< - Back To Home" onclick="displayHome()">
 			
 			<div class='container text-center'>
 				<div class='title'>
 					<h1 id='problemType'></h1>
+					<hr>
 				</div>
-				<br><br>
+				<br>
 				
 				<div class='problem'>
 					<!-- Problem area -->
@@ -52,13 +53,15 @@
 		<div id="homeView">
 			<div class='title text-center'>
 				<h1>Welcome to Math Lite!</h1>
-				<br>
+				<hr>
 				<p>Please select what you want to study:</p>
 				
-				<input id="addCheck" type="checkbox" value="addition">Addition
-				<br>
-				<input id="subCheck"  type="checkbox" value="subtraction">Subtraction
-				<br>
+				<table>
+					<input id="addCheck" type="checkbox" value="addition"> Addition
+					<input id="subCheck"  type="checkbox" value="subtraction"> Subtraction
+				</table>
+				
+				<br><br>
 				<input type="button" id="launchApp" value="Launch App" onclick="displayApp()">
 			</div>
 		</div>
