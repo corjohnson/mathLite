@@ -24,31 +24,31 @@
 	</head>
 	<body onload="initializeApp()">
 		<div id='appView'>
-			<input type="button" value="< - Back To Home" onclick="displayHome()">
-			
-			<div class='container text-center'>
-				<div class='title'>
+			<div class="container-fluid">
+				<input type="button" value="< - Back To Home" onclick="displayHome()">
+				
+				<div class='text-center'>
 					<h1 id='problemType'></h1>
 					<hr>
-				</div>
-				<br>
-				
-				<div class='problem'>
-					<!-- Problem area -->
-					<span id='num1'>x</span> <span id='operator'></span> <span id='num2'>y</span>
-				</div>
-				<br>
-				
-				<input type='text' id='answer' onkeyup="enterButtonHandle(event)">
-				<br><br>
-	
-				<div>
-					<button id='submitButton' onclick=''>Submit</button>
 					<br>
+					
+					<div class='problem'>
+						<!-- Problem area -->
+						<span id='num1'>x</span> <span id='operator'></span> <span id='num2'>y</span>
+					</div>
+					<br>
+					
+					<input type='text' id='answer' onkeyup="enterButtonHandle(event)">
+					<br><br>
+		
+					<div>
+						<button id='submitButton' onclick=''>Submit</button>
+						<br>
+					</div>
+					<br>
+		
+					<h2 id='correctness'></h2>
 				</div>
-				<br>
-	
-				<h2 id='correctness'></h2>
 			</div>
 		</div>
 		
