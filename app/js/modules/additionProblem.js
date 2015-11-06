@@ -19,6 +19,9 @@ AdditionModule.test = function () {
 		//Mark that the user was correct
 		setText(correctIndicator, "Correct!");
 		
+		//Log the problem
+		logger.logProblem("Addition", 1, true, 1);
+		
 		//Change the submit button to the generate problem button
 		setText(submitButton, "New Problem");
 		setButtonAction(submitButton, "generateProblem()");
