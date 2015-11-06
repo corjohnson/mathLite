@@ -1,37 +1,34 @@
-//Set up the subtraction module
-function setUpSubtraction(){
-	//Send init message
-	console.log("Initializing the subtraction module");
+var SubtractionModule = function () {
 	
+};
+
+SubtractionModule.setUp = function () {
 	//Change the title to the proper text
 	setText(problemTypeTitle, "Subtraction");
 	
-	//Call the newSubtractionProblem function
-	newSubtractionProblem();
-	
-	//Send init complete message
-	console.log("Subtraction module initialization complete");
-}
+	//Call new subtraction problem
+	SubtractionModule.newProblem();	
+};
 
-function testSubtraction(){
+SubtractionModule.test = function () {
 	//Get the user's answer
 	var answer = $(userAnswer).val();
 	
 	//Test subtraction
 	if(parseInt(answer) == problemAnswer){
-		//Mark that the user is correct
+		//Mark that the user was correct
 		setText(correctIndicator, "Correct!");
 		
-		//Change the submit button to the generate problem button
+		//Change the submit to new problem
 		setText(submitButton, "New Problem");
-		setButtonAction(submitButton, "newAdditionProblem()");
+		setButtonAction(submitButton, "generateProblem()");
 	}
 	else {
 		tryAgainMessage(correctIndicator);
 	}
-}
+};
 
-function newSubtractionProblem(){
+SubtractionModule.newProblem = function () {
 	//Random number between 0 and 100 for both x and y
 	var x = Math.floor(Math.random() * 100);
 	var y = Math.floor(Math.random() * 100);
@@ -51,5 +48,5 @@ function newSubtractionProblem(){
 	
 	//Set the submit button back to say submit
 	setText(submitButton, "Submit");
-	setButtonAction(submitButton, "testAddition()");
-}
+	setButtonAction(submitButton, "SubtractionModule.test()");
+};

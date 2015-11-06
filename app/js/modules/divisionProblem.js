@@ -1,21 +1,21 @@
-var AdditionModule = function () {
+var DivisionModule = function () {
 	
 };
 
-AdditionModule.setUp = function () {
+DivisionModule.setUp = function () {
 	//Change the title to the proper text
-	setText(problemTypeTitle, "Addition");
+	setText(problemTypeTitle, "Division");
 	
-	//Call the newAdditionProblem function
-	AdditionModule.newProblem();
+	//Call the new problem function
+	DivisionModule.newProblem();
 };
 
-AdditionModule.test = function () {
+DivisionModule.test = function () {
 	//Get user's answer
 	var answer = $(userAnswer).val();
 
 	//Test addition
-	if(parseInt(answer) == problemAnswer){
+	if(parseFloat(answer) == problemAnswer){
 		//Mark that the user was correct
 		setText(correctIndicator, "Correct!");
 		
@@ -28,19 +28,19 @@ AdditionModule.test = function () {
 	}
 };
 
-AdditionModule.newProblem = function () {
+DivisionModule.newProblem = function () {
 	//Random number between 0 and 100 for both x and y
-	var x = Math.floor(Math.random() * 100);
-	var y = Math.floor(Math.random() * 100);
+	var x = Math.floor(Math.random() * 50);
+	var y = Math.floor(Math.random() * 50 + 1); //never 0
 	
-	//Store the answer in a global variable
-	problemAnswer = x + y;
+	//Store the answer in a global variable rounded to 1 decimal place
+	problemAnswer = Math.round10(x / y, -1);
 	
 	//Fill out text fields in the problem
 	setText("#num1", x);
 	setText("#num2", y);
 	
-	setText(operator, "+");
+	setText(operator, "/");
 
 	//Empty the answer and correct fields
 	clearTextEntry(answer);
@@ -48,5 +48,5 @@ AdditionModule.newProblem = function () {
 	
 	//Set the submit button back to say submit
 	setText(submitButton, "Submit");
-	setButtonAction(submitButton, "AdditionModule.test()");
+	setButtonAction(submitButton, "DivisionModule.test()");
 };

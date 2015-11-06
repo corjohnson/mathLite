@@ -5,60 +5,69 @@
 		<meta charset="utf-8">
 		
 		<!-- Get Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrapStyle.css">
 		
 		<!-- Custom CSS files -->
 		<link rel="stylesheet" href="css/default.css">
 		
 		<!-- Get the latest jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/lib/jQuery1_11_3.js"></script>
 		<!-- Latest Bootstrap JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/lib/bootstrapJSLib.js"></script>
 		<!-- Custom JS files -->
 		<script src="js/app.js"></script>
 		<script src="js/lib/devAssist.js"></script>
 		<script src="js/modules/additionProblem.js"></script>
 		<script src="js/modules/subtractionProblem.js"></script>
+		<script src="js/modules/multiplicationProblem.js"></script>
+		<script src="js/modules/divisionProblem.js"></script>
 	</head>
 	<body onload="initializeApp()">
 		<div id='appView'>
-			<input type="button" value="<-- Back To Home" onclick="displayHome()">
-			
-			<div class='container text-center'>
-				<div class='title'>
+			<div class="container-fluid">
+				<input type="button" value="< - Back To Home" onclick="displayHome()">
+				
+				<div class='text-center'>
 					<h1 id='problemType'></h1>
-				</div>
-				<br><br>
-				
-				<div class='problem'>
-					<!-- Problem area -->
-					<span id='num1'>x</span> <span id='operator'></span> <span id='num2'>y</span>
-				</div>
-				<br>
-				
-				<input type='text' id='answer' onkeyup="enterButtonHandle(event)">
-				<br><br>
-	
-				<div>
-					<button id='submitButton' onclick='testAddition()'>Submit</button>
+					<hr>
 					<br>
+					
+					<div class='problem'>
+						<!-- Problem area -->
+						<span id='num1'>x</span> <span id='operator'></span> <span id='num2'>y</span>
+					</div>
+					<br>
+					
+					<input type='text' id='answer' onkeyup="enterButtonHandle(event)">
+					<br><br>
+		
+					<div>
+						<button id='submitButton' onclick=''>Submit</button>
+						<br>
+					</div>
+					<br>
+		
+					<h2 id='correctness'></h2>
 				</div>
-				<br>
-	
-				<h2 id='correctness'></h2>
 			</div>
 		</div>
 		
 		<div id="homeView">
 			<div class='title text-center'>
 				<h1>Welcome to Math Lite!</h1>
-				<br>
-				<p>Please select what you want to study:</p>
+				<hr>
+				<p>Please select what you want to practice:</p>
 				
-				<input type="checkbox" value="addition">Addition
-				<br>
-				<input type="checkbox" value="subtraction">Subtraction
-				<br>
+				<table>
+					<tr>
+						<input id="addi" type="button" onclick="activateModule('Addition', '#addi')" value="  +  ">&nbsp;
+						<input id="subt" type="button" onclick="activateModule('Subtraction', '#subt')" value="  -  ">&nbsp;
+						<input id="mult" type="button" onclick="activateModule('Multiplication', '#mult')" value="  *  ">&nbsp;
+						<input id="divi" type="button" onclick="activateModule('Division', '#divi')" value="  /  ">
+					</tr>
+				</table>
+				
+				<br><br>
 				<input type="button" id="launchApp" value="Launch App" onclick="displayApp()">
 			</div>
 		</div>
