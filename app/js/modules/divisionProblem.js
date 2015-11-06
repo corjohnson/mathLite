@@ -33,8 +33,8 @@ DivisionModule.newProblem = function () {
 	var x = Math.floor(Math.random() * 50);
 	var y = Math.floor(Math.random() * 50 + 1); //never 0
 	
-	//Store the answer in a global variable rounded to 1 decimal place
-	problemAnswer = Math.round10(x / y, -1);
+	//Store the answer in a global variable rounded to 2 decimal places
+	problemAnswer = Math.round10(x / y, -2);
 	
 	//Fill out text fields in the problem
 	setText("#num1", x);
