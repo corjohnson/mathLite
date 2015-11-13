@@ -13,7 +13,9 @@ var DataLog = function(){
 };
 
 DataLog.prototype.insertProblemStats = function(object){
-	this.problemStats.push(object);	
+	//Need to push in a data structure not the individual data
+	//this.problemStats.push(object);
+	this.problemStats[this.problemStats.length] = new ProblemLogItem("test", 1, true, 1);
 };
 
 DataLog.prototype.toString = function(){
@@ -28,9 +30,21 @@ DataLog.prototype.getProblemStats = function(){
 	var formatted = "";
 	
 	for(var par in this.problemStats){
-		formatted += "{ " + par[0] + ", " + par[1] + ", "
-					 + par[2] + ", " + par[3] + " }";
+		formatted += par.toString();
 	}
 	
-	return "\n\tProblem Stats: " + this.problemStats.toString() + "\n";
+	return "\n\tProblem Stats: " + formatted + "\n";
+};
+
+var ProblemLogItem = function(problemType, attempts, solved, time){
+	this.problemType = problemType; 
+	this.attempts = attempts;
+	this.solved = solved;
+	this.time = time;
+};
+
+ProblemLogItem.prototype.toString = function(){
+	return "{ Problem Type: " + this.problemType + ", Attempts: " 
+			+ this.attempts + ", Solved: " + this.solved + ", " +
+			"Time to Complete: " + this.time + " }";
 };
