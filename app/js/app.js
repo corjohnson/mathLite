@@ -18,8 +18,6 @@ var appView = "#appView";
 
 //Global Variables
 var problemAnswer;
-var dataLog;
-var logger;
 
 //Internal Variables
 var modules = [];
@@ -30,10 +28,6 @@ function initializeApp(){
 	
 	//Show module selection page
 	displayHome();
-	
-	//Initialize secondary scripts (ie submitHandles)
-	dataLog = new DataLog();
-	logger = new Logger(dataLog);
 	
 	console.log("Initial set up complete!");
 }
@@ -90,6 +84,4 @@ function generateProblem(){
 			AdditionModule.setUp();
 			break;
 	}
-	
-	console.log(dataLog.toString());
 }
