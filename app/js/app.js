@@ -18,6 +18,7 @@ var appView = "#appView";
 
 //Global Variables
 var problemAnswer;
+var attempts = 0;
 
 //Internal Variables
 var modules = [];

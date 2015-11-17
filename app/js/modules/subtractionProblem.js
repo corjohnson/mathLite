@@ -24,7 +24,19 @@ SubtractionModule.test = function () {
 		setButtonAction(submitButton, "generateProblem()");
 	}
 	else {
+		attempts++;
 		tryAgainMessage(correctIndicator);
+	}
+	
+	if(attempts >= 3){
+		//Mark that the user was correct
+		setText(correctIndicator, "The correct answer is: " + problemAnswer);
+		
+		//Change the submit button to the generate problem button
+		setText(submitButton, "New Problem");
+		setButtonAction(submitButton, "generateProblem()");
+		
+		attempts = 0;
 	}
 };
 
