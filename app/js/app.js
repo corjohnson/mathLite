@@ -18,6 +18,7 @@ var appView = "#appView";
 
 //Global Variables
 var problemAnswer;
+var attempts = 0;
 
 //Internal Variables
 var modules = [];
@@ -28,8 +29,6 @@ function initializeApp(){
 	
 	//Show module selection page
 	displayHome();
-	
-	//Initialize secondary scripts (ie submitHandles)
 	
 	console.log("Initial set up complete!");
 }
@@ -68,6 +67,7 @@ function activateModule(moduleType, button){
 
 function generateProblem(){
 	var selection = modules[Math.floor(Math.random() * modules.length)];
+	attempts = 0;
 	
 	switch(selection){
 		case "Addition":
