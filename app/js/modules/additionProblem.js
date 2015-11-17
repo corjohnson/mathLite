@@ -35,8 +35,6 @@ AdditionModule.test = function () {
 		//Change the submit button to the generate problem button
 		setText(submitButton, "New Problem");
 		setButtonAction(submitButton, "generateProblem()");
-		
-		attempts = 0;
 	}
 };
 

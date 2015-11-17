@@ -35,15 +35,13 @@ MultiplicationModule.test = function () {
 		//Change the submit button to the generate problem button
 		setText(submitButton, "New Problem");
 		setButtonAction(submitButton, "generateProblem()");
-		
-		attempts = 0;
 	}
 };
 
 MultiplicationModule.newProblem = function () {
 	//Random number between 0 and 100 for both x and y
-	var x = Math.floor(Math.random() * 20);
-	var y = Math.floor(Math.random() * 20);
+	var x = Math.floor(Math.random() * 15);
+	var y = Math.floor(Math.random() * 15);
 	
 	//Store the answer in a global variable
 	problemAnswer = x * y;
