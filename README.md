@@ -14,5 +14,5 @@ This is so I can ensure that the code will work before updating the master branc
 
 ***************************************************************************************************
 If you are looking to use this project for personal use, educational use, or commercial use: 
-Feel free to play around with this app! It's free for all and upon the release of version 1, the app will run regardless of 
+Feel free to play around with this app! It's free for all and the app will run regardless of 
 internet connection.
